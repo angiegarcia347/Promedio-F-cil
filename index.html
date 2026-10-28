@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promedio Fácil</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Promedio Fácil 🎓</h1>
+        <p class="subtitle">Calculadora de notas escolares</p>
+
+        <form id="gradeForm">
+            <div class="input-group">
+                <label for="studentName">Nombre del Estudiante:</label>
+                <input type="text" id="studentName" placeholder="Ej: María Pérez" required>
+            </div>
+
+            <div class="grades-row">
+                <div class="input-group">
+                    <label for="grade1">Nota 1:</label>
+                    <input type="number" id="grade1" step="0.1" min="0" max="5" placeholder="0.0 - 5.0" required>
+                </div>
+                <div class="input-group">
+                    <label for="grade2">Nota 2:</label>
+                    <input type="number" id="grade2" step="0.1" min="0" max="5" placeholder="0.0 - 5.0" required>
+                </div>
+                <div class="input-group">
+                    <label for="grade3">Nota 3:</label>
+                    <input type="number" id="grade3" step="0.1" min="0" max="5" placeholder="0.0 - 5.0" required>
+                </div>
+            </div>
+
+            <div class="button-group">
+                <button type="button" id="calcBtn" class="btn btn-primary">Calcular Promedio</button>
+                <button type="button" id="saveBtn" class="btn btn-success" disabled>Guardar Registro</button>
+            </div>
+        </form>
+
+        <div id="resultBox" class="result-box hidden">
+            <h3>Resultado para <span id="resName">-</span></h3>
+            <p>Suma total de notas: <strong id="resSum">0</strong></p>
+            <p>Desglose: <span id="resBreakdown">(0 + 0 + 0) / 3</span></p>
+            <div class="final-score">
+                Promedio Final: <span id="resAverage">0.0</span>
+            </div>
+        </div>
+
+        <div class="table-section">
+            <h2>Registros Guardados</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Estudiante</th>
+                        <th>Notas</th>
+                        <th>Promedio</th>
+                    </tr>
+                </thead>
+                <tbody id="recordsTableBody">
+                    <!-- Los registros se agregarán aquí dinámicamente -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
